@@ -1,0 +1,29 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript ({
+    //repositories 配置的是我们打包时所要用的插件放在那些仓库中。 配置要从哪儿去下载插件，常见的是google()与jcenter()仓库
+    repositories ({
+        google()
+        jcenter()
+    })
+    //dependencies 配置插件 。这些插件都是打包时要用到的插件。也就是，这些插件是打包的时候要用的
+    dependencies ({
+        //这个插件是google谷歌开发的，google把这个插件放到了google()这个仓库里了
+        classpath "com.android.tools.build:gradle:4.0.0"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    })
+})
+
+
+// 这里是我们的代码依赖了那些第三方的库，这些第三方库所在的仓库
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

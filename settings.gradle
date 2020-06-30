@@ -1,0 +1,5 @@
+// gradle 的 工作流程： 初始化阶段-----配置阶段-----执行阶段
+// 其实初始化阶段就是执行settings.gradle这个文件
+
+include ':app'
+rootProject.name = "GradleDASLApplication"
